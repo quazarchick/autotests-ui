@@ -1,10 +1,10 @@
 import pytest
-from playwright.sync_api import expect
+from playwright.sync_api import expect, Page
 
 
 @pytest.mark.regression
 @pytest.mark.courses
-def test_empty_courses_list(chromium_page_with_state):
+def test_empty_courses_list(chromium_page_with_state: Page):
     chromium_page_with_state.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses")
 
     chromium_page_with_state.wait_for_url("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses")
